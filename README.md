@@ -1,4 +1,4 @@
 # Cronometro
-Cronometro con js
+Cronometro con javaScript
 
-https://jesusbriones2.github.io/Cronometro/
+* link: https://jesusbriones2.github.io/cronometro/
