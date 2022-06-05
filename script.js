@@ -7,7 +7,7 @@ let counter = { m:0, s:0, ms:0 };
 // Evento al contenedor de los botones.
 buttons.addEventListener( 'click', (e) => {
 	if ( e.target.id == 'start' ) action_start(e);
-	if ( e.target.id == 'restart' ) restart_chronometer();
+	if ( e.target.id == 'restart' ) restart_chronometer(e);
 	if ( e.target.id == 'capture' ) capture_time();
 });
 
@@ -33,7 +33,7 @@ function action_start (e) {
 		stop_chronometer();
 		buttons.lastElementChild.disabled = true;
 		buttons.firstElementChild.disabled = false;
-		e.target.textContent = 'Iniciar';
+		e.target.textContent = 'Reanudar';
 	}
 }
 
@@ -79,7 +79,8 @@ function stop_chronometer () {
 
 
 // Reinicia el cronómetro
-function restart_chronometer () {
+function restart_chronometer (e) {
+	e.target.nextElementSibling.textContent = 'Iniciar';
 	counter = { m:0, s:0, ms:0 };
 	document.getElementById('captures').innerHTML = '';
 	update_time();
